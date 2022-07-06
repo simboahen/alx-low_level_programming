@@ -1,10 +1,10 @@
 #include <stdio.h>
 
 /**
- *  * main - Program that prints the add of the fibonacci numbers
- *   *
- *    * Return: Always 0
- *     */
+* main - Program that prints the add of the fibonacci numbers
+*
+* Return: Always 0
+*/
 int main(void)
 {
 	int c;
