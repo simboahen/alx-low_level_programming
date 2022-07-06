@@ -1,34 +1,26 @@
-#include "main.h"
+#include <stdio.h>
 
 /**
-* times_table - This program will print the 9 times table
-*
-* Rturn: no return
+* main -> assign a random number to the variable n each time it is executed
+* and print the last digit of the number stored in the variable n
+* Return: Always 0 (Success)
 */
-void times_table(void)
+int main(void)
 {
-	int a, b, c;
+	int ch;
 
-	for (a = 0; a <= 9; a++)
+	for (ch = 48; ch <= 57; ch++)
 	{
-		_putchar(48);
-		for (b = 1; b <= 9; b++)
-		{
 
-			c = a * b;
-			_putchar(44);
-			_pututchar(32);
-			if (c <= 9)
-			{
-				_putchar(32);
-				_putchar(c + 48);
-			}
-			else
-			{
-				_putchar((c / 10) + 48);
-				_putchar((c % 10) + 48);
-			}
+		putchar(ch);
+		if (ch != 57)
+		{
+			putchar(44);
+			putchar(32);
 		}
-	_putchar('\n');
 	}
+
+	putchar(10); /* this is an ascii code for new line*/
+
+	return (0);
 }
