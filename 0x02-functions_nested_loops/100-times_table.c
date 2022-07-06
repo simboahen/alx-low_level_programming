@@ -1,50 +1,34 @@
-#include "main.h"
+#include <stdio.h>
 
 /**
-* print_times_table - This prints the n times table
-*
-* @n: number times table (0 < n <= 15)
-*
-* Return: no return
+* main - prints all possible different combinations of three digits
+* Return: Always 0 (Success)
 */
-void print_times_table(int n)
+int main(void)
 {
-	int a, b, outp;
+	int n, m, l;
 
-	if (n >= 0 && n <= 15)
+	for (n = 48; n < 58; n++)
 	{
-		for (a = 0; a <= n; a++)
+		for (m = 49; m < 58; m++)
 		{
-		      _ putchar(48);
-		       for (b = 1; b <= n; b++)
+			for (l = 50; l < 58; l++)
 			{
-				outp = a * b;
-				_putchar(44);
-				_putchar(32);
-				if (outp <= 9)
+				if (l > m && m > n)
 				{
-					_putchar(32);
-					_putchar(32);
-					_putchar(outp + 48);
+					putchar(n);
+					putchar(m);
+					putchar(l);
+					if (n != 55 || m != 56)
+					{
+						putchar(',');
+						putchar(' ');
+					}
 				}
-				 else if (outp <= 99)
-		 		{
-					_putchar(32);
-					_putchar((outp / 10) + 48);
-					_putchar((outp % 10) + 48);
-				}
-				else
-				{
-					_putchar(((outp / 100) % 10) + 48);
-					_putchar(((outp / 10) % 10) + 48);
-					_putchar((outp % 10) + 48);
-				}
-
 			}
-			_putchar('\n');
-			
 		}
-		
 	}
-
+	putchar('\n');
+	return (0);
 }
+
