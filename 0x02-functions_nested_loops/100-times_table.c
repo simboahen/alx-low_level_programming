@@ -1,34 +1,49 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
-* main - prints all possible different combinations of three digits
-* Return: Always 0 (Success)
+* print_times_table - prints the n times table, starting with 0
+* @n: number of the times table
 */
-int main(void)
+void print_times_table(int n)
 {
-	int n, m, l;
+	int i, j, k;
 
-	for (n = 48; n < 58; n++)
+	if (n >= 0 && n <= 15)
 	{
-		for (m = 49; m < 58; m++)
+		for (i = 0; i <= n; i++)
 		{
-			for (l = 50; l < 58; l++)
+			for (j = 0; j <= n; j++)
 			{
-				if (l > m && m > n)
+				k = j * i;
+
+				if (j == 0)
 				{
-					putchar(n);
-					putchar(m);
-					putchar(l);
-					if (n != 55 || m != 56)
-					{
-						putchar(',');
-						putchar(' ');
-					}
+					_putchar(k + '0');
+				} else if (k < 10 && j != 0)
+				{
+					_putchar(',');
+					_putchar(' ');
+					_putchar(' ');
+					_putchar(' ');
+				
+					_putchar(k + '0');
+				} else if (k >= 10 && k < 100)
+				{
+					_putchar(',');
+					_putchar(' ');
+					_putchar(' ');
+					_putchar((k / 10) + '0');
+					_putchar((k % 10) + '0');
+				} else if (k >= 100)
+				{
+					_putchar(',');
+					_putchar(' ');
+					_putchar((k / 100) + '0');
+					_putchar(((k / 10) % 10) + '0');
+					_putchar((k % 10) + '0');
 				}
 			}
+			_putchar('\n');
 		}
 	}
-	putchar('\n');
-	return (0);
 }
-
