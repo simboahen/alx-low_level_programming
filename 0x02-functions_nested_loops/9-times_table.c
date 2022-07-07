@@ -1,26 +1,33 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
-* main -> assign a random number to the variable n each time it is executed
-* and print the last digit of the number stored in the variable n
-* Return: Always 0 (Success)
+* times_table -> time table
 */
-int main(void)
+void times_table(void)
 {
-	int ch;
-
-	for (ch = 48; ch <= 57; ch++)
+	int x, y, k;
+	for (x = 0; x < 10; x++)
 	{
-
-		putchar(ch);
-		if (ch != 57)
+		for (y = 0; y < 10; y++)
 		{
-			putchar(44);
-			putchar(32);
+			k = x * y;
+			if (y == 0)
+				_putchar(k + '0');
+			if (y != 0 && k < 10)
+			{
+				_putchar(',');
+				_putchar(' ');
+				_putchar(' ');
+				_putchar(k + '0');
+			} else if (k >= 10)
+			{
+				_putchar(',');
+				_putchar(' ');
+				_putchar((k / 10) + '0');
+				_putchar((k % 10) + '0');
+			}
 		}
+		_putchar('\n');
 	}
-
-	putchar(10); /* this is an ascii code for new line*/
-
-	return (0);
 }
+
